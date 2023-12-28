@@ -1,0 +1,43 @@
+/* Copyright (c) 2023 YA-androidapp(https://github.com/yzkn) All rights reserved. */
+
+
+table {
+    counter-reset: row-num;
+    counter-increment: row-num -1;
+}
+
+table tr {
+    counter-increment: row-num;
+}
+
+table tr td:first-child::before {
+    content: counter(row-num);
+}
+
+tr:first-child {
+    display: none;
+}
+
+#listFaker {
+    overflow-x: scroll;
+}
+
+.list {
+    font-family: sans-serif;
+}
+
+th {
+    padding: 10px;
+    border: solid 1px #eee;
+    white-space: nowrap;
+
+    background-color: #212529 !important;
+    background-image: var(--bs-gradient) !important;
+    color: #fff !important;
+}
+
+td {
+    padding: 10px;
+    border: solid 1px #eee;
+    white-space: nowrap;
+}
