@@ -45,16 +45,20 @@
                                 <input type="number" class="form-control" id="countFaker" name="countFaker"
                                     placeholder="Count" value="10">
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <button type="button" class="btn btn-primary" id="generateFaker" name="generateFaker"
                                     disabled>Gen</button>
                                 <button type="button" class="btn btn-outline-secondary" id="clearFaker"
                                     name="clearFaker" disabled>Clear</button>
                             </div>
-                            <div class="offset-3 col-3">
+                            <div class="offset-3 col-1">
+                                <a title="選択したセルを含む列をクリップボードにコピーするブックマークレット"
+                                    href="javascript:(function(){!function(d,f,s){s=d.createElement('script');s.src='https://code.jquery.com/jquery-3.7.1.min.js';s.onload=function(){f(jQuery.noConflict(1))};d.body.appendChild(s)}(document,function($){var r='',p='';var s=document.getSelection();var c=-1;c=$(s.focusNode).closest('td').index();if (c<0) {c=$(s.focusNode).closest('th').index();}if (c<0) {return;}var o=$(s.focusNode.parentNode).closest('table');o.find('tr').each(function () {var t = $(this).find('td:eq('+c+')').text().trim();if (t=='') {t = $(this).find('th:eq('+c+')').text().trim();}r+=t+'<br/>';p+=t+'\n';});if(r==''){return;}navigator.clipboard.writeText(p).then(()=>console.log('Copied!'),()=>{var w=window.open('');var d=w.document.open();d.write(r);d.close();});});})();">CopyCol</a>
+                            </div>
+                            <div class="col-3">
                                 <button type="button" class="btn btn-primary" id="saveFaker" name="saveFaker"
-                                    disabled>Download <span id="recordCountFaker" name="recordCountFaker"></span>
-                                    record(s) as CSV</button>
+                                    disabled>Save <span id="recordCountFaker" name="recordCountFaker"></span>
+                                    row(s) as CSV</button>
                             </div>
                         </div>
                         <div class="row my-5">
@@ -84,7 +88,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 
-    <script src="js/all.js"></script>
+    <script src="js/ex.js"></script>
     <script src="js/valueNames.js"></script>
     <script src="js/app.js"></script>
 
