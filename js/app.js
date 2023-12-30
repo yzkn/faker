@@ -32,8 +32,8 @@ const clearFaker = _ => {
 
     htmlString += '</tr><tr><th>#</th>';
 
-    valueDisplayNames.forEach((value) => {
-        htmlString += '<th>' + value + '</th>';
+    valueDisplayNames.forEach((value, index) => {
+        htmlString += '<th class="' + valueNames[index] + '">' + value + '</th>';
     });
 
     htmlString += '</tr></tbody></table>';
