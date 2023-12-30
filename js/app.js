@@ -24,8 +24,21 @@ const generateFaker = _ => {
 };
 
 const clearFaker = _ => {
-    document.getElementById('listFaker').innerHTML = '<table><tbody class="list" id="tableFaker"><tr><td></td><td class="Surname"></td><td class="GivenName"></td><td class="SurnameKana"></td><td class="GivenNameKana"></td><td class="SurnameRome"></td><td class="GivenNameRome"></td><td class="Sex"></td><td class="Phone11"></td><td class="Phone12"></td><td class="Phone13"></td><td class="FAX11"></td><td class="FAX12"></td><td class="FAX13"></td><td class="MobilePhone11"></td><td class="MobilePhone12"></td><td class="MobilePhone13"></td><td class="MailAddress"></td><td class="PostalCode"></td><td class="Address11"></td><td class="Address12"></td><td class="Address13"></td><td class="Address14"></td><td class="Address15"></td><td class="AddressKana11"></td><td class="AddressKana12"></td><td class="AddressKana13"></td><td class="AddressKana14"></td><td class="AddressKana15"></td><td class="AddressRome11"></td><td class="AddressRome12"></td><td class="AddressRome13"></td><td class="AddressRome14"></td><td class="AddressRome15"></td><td class="DateOfBirth"></td><td class="Birthplace"></td><td class="BloodType"></td><td class="RandomNumber"></td><td class="Password"></td></tr>' +
-        '<tr><th>#</th><th>姓</th><th>名</th><th>せい</th><th>めい</th><th>Surname</th><th>Given name</th><th>性</th><th colspan="3">電話番号</th><th colspan="3">FAX</th><th colspan="3">携帯番号</th><th>Eメール</th><th>郵便番号</th><th colspan="5">住所</th><th colspan="5">じゅうしょ</th><th colspan="5">Address</th><th>誕生日</th><th>出生地</th><th>血液型</th><th>乱数</th><th>パスワード</th></tr></tbody></table>';
+    let htmlString = '<table><tbody class="list" id="tableFaker"><tr><td></td>'; // 行番号の1セル
+
+    valueNames.forEach((value) => {
+        htmlString += '<td class="' + value + '"></td>';
+    });
+
+    htmlString += '</tr><tr><th>#</th>';
+
+    valueDisplayNames.forEach((value) => {
+        htmlString += '<th>' + value + '</th>';
+    });
+
+    htmlString += '</tr></tbody></table>';
+
+    document.getElementById('listFaker').innerHTML = htmlString;
 
     document.getElementById('saveFaker').setAttribute('disabled', 'disabled');
 };
